@@ -1,0 +1,26 @@
+.nav {
+  width: 950px;
+  display: flex;
+  align-items: center;
+}
+
+.ul {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background-color: #1ea8af;
+}
+
+.primaryList {
+  padding: 9px 10px;
+  color: #f8fe2d;
+  background-color: #0b4c5f;
+  position: relative;
+}
+
+.normalList {
+  padding: 9px 10px;
+  color: white;
+  background-color: #1ea8af;
+  position: relative;
+}

@@ -1,9 +1,4 @@
-import Header from "./_component/Header";
-
+import PageContainer from './_component/Content/PageContainer';
 export default function Home() {
-    return (
-      <main>
-        <Header />
-      </main>
-    )
-  }
+  return <PageContainer>Home</PageContainer>;
+}
