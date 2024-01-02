@@ -4,9 +4,11 @@ import styles from './tabs.module.css';
 import Link from 'next/link';
 import { useState } from 'react';
 import SubMenus from '../SubMenus/SubMenus';
+import useRecentVisited from '@/app/_hooks/useRecentVisited';
 
 export default function Tabs() {
   const { data } = useGetBoards();
+  const { setRecentVisitedCookie } = useRecentVisited();
   const [activeSubMenu, setActiveSubMenu] = useState('');
 
   const handleMouseEnter = (id: string) => {
@@ -29,7 +31,14 @@ export default function Tabs() {
               onMouseEnter={() => handleMouseEnter(menu.id)}
               onMouseLeave={handleMouseLeave}
             >
-              <Link href={menu.url}>{menu.name}</Link>
+              <Link
+                href={menu.url}
+                onClick={() => {
+                  setRecentVisitedCookie({ name: menu.name, url: menu.url });
+                }}
+              >
+                {menu.name}
+              </Link>
               {menu.subBoardMenus && menu.id === activeSubMenu && (
                 <SubMenus key={menu.id} subMenus={menu.subBoardMenus} />
               )}

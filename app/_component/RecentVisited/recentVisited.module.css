@@ -1,0 +1,11 @@
+.container {
+  padding: 5px 14px;
+  font-weight: 700;
+  color: #222;
+  font-size: 14px;
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 35px;
+}
