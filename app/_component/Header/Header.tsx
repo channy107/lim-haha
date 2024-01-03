@@ -1,4 +1,4 @@
-import PageContainer from '../Content/PageContainer';
+import PageContainer from '../PageContainer/PageContainer';
 import HeaderTitle from '../HeaderTitle';
 import RecentVisited from '../RecentVisited/RecentVisited';
 import Tabs from '../Tabs/Tabs';

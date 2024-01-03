@@ -1,0 +1,15 @@
+.recent {
+  flex: 1;
+  height: 297px;
+}
+
+.original {
+  flex: 1;
+  height: 297px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

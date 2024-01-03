@@ -1,4 +1,13 @@
-import PageContainer from './_component/Content/PageContainer';
+import PageContainer from './_component/PageContainer/PageContainer';
+import YoutubeStream from './_component/YoutubeStream/YoutubeStream';
+import styles from './page.module.css';
+
 export default function Home() {
-  return <PageContainer>Home</PageContainer>;
+  return (
+    <PageContainer>
+      <section className={styles.container}>
+        <YoutubeStream />
+      </section>
+    </PageContainer>
+  );
 }

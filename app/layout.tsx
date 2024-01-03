@@ -5,6 +5,7 @@ import './globals.css';
 import Header from './_component/Header/Header';
 import RQProvider from './_component/RQProvider';
 import CookieProvider from './_component/CookieProvider';
+import Adsense from './_component/Adsense/Adsense';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <RQProvider>
             <MSWComponent>
               <Header />
+              <Adsense />
               {children}
             </MSWComponent>
           </RQProvider>
