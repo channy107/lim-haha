@@ -1,3 +1,7 @@
+.container {
+  display: flex;
+}
+
 .recent {
   flex: 1;
   height: 297px;

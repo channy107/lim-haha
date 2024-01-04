@@ -10,3 +10,20 @@ interface IBoardMenu {
   subBoardMenus: ISubBoardMenus[];
   url: string;
 }
+
+interface IAuthor {
+  name: string;
+  type: 'admin' | 'user';
+}
+
+interface INotification {
+  id: string;
+  type: 'dudle' | 'notice';
+  title: string;
+  content: string;
+  commentCount: number;
+  author: IAuthor;
+  createAt: string;
+  viewCount: number;
+  likes: number;
+}

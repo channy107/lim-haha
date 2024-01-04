@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function YoutubeStream() {
   return (
-    <>
+    <section className={styles.container}>
       <div className={styles.recent}>
         <p className={styles.title}>
           <Image src={Youtube} alt="youtube" width="20" height="20" />
@@ -31,6 +31,6 @@ export default function YoutubeStream() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         />
       </div>
-    </>
+    </section>
   );
 }

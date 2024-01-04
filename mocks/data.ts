@@ -48,4 +48,40 @@ const boardMenus = [
   },
 ];
 
-export { boardMenus };
+const notifications = [
+  {
+    id: '1',
+    type: 'dudle',
+    title: '[선정작] 침하하 두들 상시 모집!',
+    content: 'content example',
+    commentCount: 19,
+    author: { name: '침하하 관리팀', type: 'admin' },
+    createAt: '1704328764076',
+    viewCount: 9081,
+    likes: 180,
+  },
+  {
+    id: '2',
+    type: 'notice',
+    title: '[방송일정] 1/1월 ~ 1/7 일 방송일정 안내',
+    content: 'content example',
+    commentCount: 260,
+    author: { name: '침착맨', type: 'admin' },
+    createAt: '1704328764076',
+    viewCount: 434333,
+    likes: 130,
+  },
+  {
+    id: '3',
+    type: 'notice',
+    title: '[공지] 2024년 기념 시청자 참여 콘텐츠 및 침투부 어워즈 투표 안내',
+    content: 'content example',
+    commentCount: 184,
+    author: { name: '침착맨', type: 'admin' },
+    createAt: '1704328764076',
+    viewCount: 90481,
+    likes: 3343,
+  },
+];
+
+export { boardMenus, notifications };
