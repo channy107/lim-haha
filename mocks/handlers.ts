@@ -1,5 +1,5 @@
 import { HttpResponse, http } from 'msw';
-import { boardMenus, notifications } from './data';
+import { boardMenus, notifications, boards } from './data';
 
 export const handlers = [
   http.get('/api/boardMenus', () => {
@@ -7,5 +7,8 @@ export const handlers = [
   }),
   http.get('/api/notifications', () => {
     return HttpResponse.json(notifications);
+  }),
+  http.get('/api/boards', () => {
+    return HttpResponse.json(boards);
   }),
 ];

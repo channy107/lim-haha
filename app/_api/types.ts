@@ -27,3 +27,16 @@ interface INotification {
   viewCount: number;
   likes: number;
 }
+
+interface IBoards {
+  id: string;
+  thumbnail: string;
+  title: string;
+  label: string;
+  content: string;
+  commentCount: number;
+  author: IAuthor;
+  createAt: string;
+  viewCount: number;
+  likes: number;
+}

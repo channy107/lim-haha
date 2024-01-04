@@ -1,8 +1,9 @@
-import PageContainer from './_component/PageContainer/PageContainer';
+import PageContainer from './_component/PageContainer';
 import Board from './_component/Board';
 import Title from './_component/BoardTitle/Title';
-import YoutubeStream from './_component/YoutubeStream/YoutubeStream';
-import Notification from './_component/BoardNotification/Notification';
+import YoutubeStream from './_component/YoutubeStream';
+import Notification from './_component/BoardNotification';
+import Posts from './_component/BoardPosts';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <Board>
           <Title title="임하하" />
           <Notification />
+          <Posts />
         </Board>
       </section>
     </PageContainer>

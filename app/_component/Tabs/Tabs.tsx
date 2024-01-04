@@ -1,5 +1,5 @@
 'use client';
-import useGetBoards from '@/app/_remotes/useGetBoards';
+import useGetBoardMenus from '@/app/_remotes/useGetBoardMenus';
 import styles from './tabs.module.css';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -7,7 +7,7 @@ import SubMenus from '../SubMenus/SubMenus';
 import useRecentVisited from '@/app/_hooks/useRecentVisited';
 
 export default function Tabs() {
-  const { data } = useGetBoards();
+  const { data } = useGetBoardMenus();
   const { setRecentVisitedCookie } = useRecentVisited();
   const [activeSubMenu, setActiveSubMenu] = useState('');
 

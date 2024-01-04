@@ -1,14 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
-import { getBoardMenus } from '../_api/getBoardMenus';
+import { getBoards } from '../_api/getBoards';
 
 const useGetBoards = () => {
   const fetcher = async () => {
-    const response = await getBoardMenus();
+    const response = await getBoards();
 
     return response;
   };
 
-  return useQuery<IBoardMenu[]>({ queryKey: ['boardMenus'], queryFn: fetcher });
+  return useQuery<IBoards[]>({ queryKey: ['boards'], queryFn: fetcher });
 };
 
 export default useGetBoards;
