@@ -6,6 +6,7 @@ import Header from './_component/Header/Header';
 import RQProvider from './_component/RQProvider';
 import CookieProvider from './_component/CookieProvider';
 import Adsense from './_component/Adsense/Adsense';
+import RecoilProvider from './_component/RecoilProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,13 +20,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={inter.className}>
         <CookieProvider>
-          <RQProvider>
-            <MSWComponent>
-              <Header />
-              <Adsense />
-              {children}
-            </MSWComponent>
-          </RQProvider>
+          <RecoilProvider>
+            <RQProvider>
+              <MSWComponent>
+                <Header />
+                <Adsense />
+                {children}
+              </MSWComponent>
+            </RQProvider>
+          </RecoilProvider>
         </CookieProvider>
       </body>
     </html>

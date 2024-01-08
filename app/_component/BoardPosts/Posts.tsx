@@ -8,9 +8,18 @@ import styles from './posts.module.css';
 import Badge from '../Badge/Badge';
 import useGetBoards from '@/app/_remotes/useGetBoards';
 import { elapsedTime } from '@/app/_utils/date';
+import { useRecoilState } from 'recoil';
+import { postsPageState } from '@/app/_atoms/posts/page';
+import { useEffect } from 'react';
 
 export default function Posts() {
-  const { data: boards } = useGetBoards();
+  const [pageState, setPageState] = useRecoilState(postsPageState);
+  const { data } = useGetBoards({ page: pageState.page });
+  const { data: boards, total = 0 } = data || {};
+
+  useEffect(() => {
+    setPageState({ ...pageState, total });
+  }, []);
 
   return (
     <>

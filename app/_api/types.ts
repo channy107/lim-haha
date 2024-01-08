@@ -1,3 +1,8 @@
+interface IResponse<T> {
+  data: T;
+  total: number;
+}
+
 interface ISubBoardMenus {
   id: string;
   name: string;

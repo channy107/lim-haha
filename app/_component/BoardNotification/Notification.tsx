@@ -11,7 +11,6 @@ import Image from 'next/image';
 
 export default function Notification() {
   const { data: notifications } = useGetNotifications();
-  console.info('data', notifications);
   return (
     <>
       {notifications?.map((notification) => (

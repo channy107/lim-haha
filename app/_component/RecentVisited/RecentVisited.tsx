@@ -5,8 +5,6 @@ import useRecentVisited, { ISetRecentVisitedCookieParam } from '@/app/_hooks/use
 
 export default function RecentVisited() {
   const { visited } = useRecentVisited();
-
-  console.info('visited', visited);
   return (
     <div className={styles.container}>
       <span>최근 방문</span>

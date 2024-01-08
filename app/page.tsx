@@ -4,6 +4,7 @@ import Title from './_component/BoardTitle/Title';
 import YoutubeStream from './_component/YoutubeStream';
 import Notification from './_component/BoardNotification';
 import Posts from './_component/BoardPosts';
+import Pagination from './_component/Pagination/Pagination';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
           <Title title="임하하" />
           <Notification />
           <Posts />
+          <Pagination />
         </Board>
       </section>
     </PageContainer>

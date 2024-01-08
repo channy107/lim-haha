@@ -1,5 +1,5 @@
-export async function getBoards() {
-  const res = await fetch('http://localhost:3000/api/boards', {
+export async function getBoards(page: number, offset: number) {
+  const res = await fetch(`http://localhost:3000/api/boards?page=${page}&offset=${offset}`, {
     next: {
       tags: ['boards'],
     },
