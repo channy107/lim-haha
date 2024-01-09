@@ -3,12 +3,12 @@
 import { ChangeEvent, useState } from 'react';
 import styles from './search.module.css';
 import { useResetRecoilState, useSetRecoilState } from 'recoil';
-import { postsSearchState } from '@/app/_atoms/posts/search';
-import { postsPageState } from '@/app/_atoms/posts/page';
+import { postsPageState, postsSearchState } from '@/app/_recoil/post/atoms';
+import { SEARCH_TYPE } from '@/app/_common/constants';
 
 export default function Search() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchType, setSearchType] = useState('title');
+  const [searchType, setSearchType] = useState(SEARCH_TYPE.TITLE);
   const resetPageState = useResetRecoilState(postsPageState);
   const setSearchState = useSetRecoilState(postsSearchState);
 
@@ -29,9 +29,9 @@ export default function Search() {
   return (
     <section className={styles.container}>
       <select className={styles.select} value={searchType} onChange={handleFilter}>
-        <option value="title">제목</option>
-        <option value="titleOrContent">제목 + 내용</option>
-        <option value="content">내용</option>
+        <option value={SEARCH_TYPE.TITLE}>제목</option>
+        <option value={SEARCH_TYPE.TITLE_OR_CONTENT}>제목 + 내용</option>
+        <option value={SEARCH_TYPE.CONTENT}>내용</option>
       </select>
 
       <input className={styles.input} type="text" value={searchTerm} onChange={handleChange} />

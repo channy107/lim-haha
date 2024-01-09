@@ -1,14 +1,16 @@
 import { HttpResponse, http } from 'msw';
 import { boardMenus, notifications, boards } from './data';
+import { MENUS_ENDPOINT, NOTIFICATIONS_ENDPOINT, POSTS_ENDPOINT } from '@/app/_api/endpoints';
+import { SEARCH_TYPE } from '@/app/_common/constants';
 
 export const handlers = [
-  http.get('/api/boardMenus', () => {
+  http.get(MENUS_ENDPOINT, () => {
     return HttpResponse.json(boardMenus);
   }),
-  http.get('/api/notifications', () => {
+  http.get(NOTIFICATIONS_ENDPOINT, () => {
     return HttpResponse.json(notifications);
   }),
-  http.get('/api/boards', ({ request }) => {
+  http.get(POSTS_ENDPOINT, ({ request }) => {
     const url = new URL(request.url);
     const page = url.searchParams.get('page');
     const offset = url.searchParams.get('offset');
@@ -28,15 +30,15 @@ export const handlers = [
       });
     }
 
-    if (searchType === 'title') {
+    if (searchType === SEARCH_TYPE.TITLE) {
       newBoards = boards.data.filter((board) => board.title.includes(search));
     }
 
-    if (searchType === 'content') {
+    if (searchType === SEARCH_TYPE.CONTENT) {
       newBoards = boards.data.filter((board) => board.content.includes(search));
     }
 
-    if (searchType === 'titleOrContent') {
+    if (searchType === SEARCH_TYPE.TITLE_OR_CONTENT) {
       newBoards = boards.data.filter(
         (board) => board.title.includes(search) || board.content.includes(search),
       );

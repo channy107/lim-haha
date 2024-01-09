@@ -1,7 +1,5 @@
-import PageContainer from '@/app/_component/PageContainer/PageContainer';
-
 const Post = () => {
-  return <PageContainer>New Post</PageContainer>;
+  return <>New Post</>;
 };
 
 export default Post;

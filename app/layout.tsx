@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { MSWComponent } from '@/app/_component/MSWComponent';
+import { MSWComponent } from '@/app/_common/components/MSWComponent';
 import './globals.css';
-import Header from './_component/Header/Header';
-import RQProvider from './_component/RQProvider';
-import CookieProvider from './_component/CookieProvider';
-import Adsense from './_component/Adsense/Adsense';
-import RecoilProvider from './_component/RecoilProvider';
+import Header from '@/app//_component/Header/Header';
+import RQProvider from '@/app/_common/components/RQProvider';
+import CookieProvider from '@/app//_common/components/CookieProvider';
+import RecoilProvider from '@/app/_common/components/RecoilProvider';
+import Container from '@/app/_common/components/Container/Container';
+import TopBar from '@/app//_component/TopBar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,9 +24,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <RecoilProvider>
             <RQProvider>
               <MSWComponent>
-                <Header />
-                {/* <Adsense /> */}
-                {children}
+                <TopBar />
+                <Container>
+                  <Header />
+                  {children}
+                </Container>
               </MSWComponent>
             </RQProvider>
           </RecoilProvider>

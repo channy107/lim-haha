@@ -1,14 +1,14 @@
 'use client';
 import useGetBoardMenus from '@/app/_remotes/useGetBoardMenus';
-import styles from './tabs.module.css';
-import Link from 'next/link';
+import styles from '@/app/_component/Tabs/tabs.module.css';
+import Tab from '@/app/_component/Tab';
 import { useState } from 'react';
-import SubMenus from '../SubMenus/SubMenus';
-import useRecentVisited from '@/app/_hooks/useRecentVisited';
+import SubMenus from '../SubMenus';
+
+const PRIMARY_ID = '1';
 
 export default function Tabs() {
   const { data } = useGetBoardMenus();
-  const { setRecentVisitedCookie } = useRecentVisited();
   const [activeSubMenu, setActiveSubMenu] = useState('');
 
   const handleMouseEnter = (id: string) => {
@@ -23,24 +23,18 @@ export default function Tabs() {
     <nav className={styles.nav}>
       <ul className={styles.ul}>
         {data?.map((menu) => {
-          const isImhaha = menu.id === '1';
+          const { id, name, url, subBoardMenus } = menu;
+          const isPrimary = id === PRIMARY_ID;
           return (
             <li
-              className={isImhaha ? styles.primaryList : styles.normalList}
-              key={menu.id}
-              onMouseEnter={() => handleMouseEnter(menu.id)}
+              className={isPrimary ? styles.primaryList : styles.normalList}
+              key={id}
+              onMouseEnter={() => handleMouseEnter(id)}
               onMouseLeave={handleMouseLeave}
             >
-              <Link
-                href={menu.url}
-                onClick={() => {
-                  setRecentVisitedCookie({ name: menu.name, url: menu.url });
-                }}
-              >
-                {menu.name}
-              </Link>
-              {menu.subBoardMenus && menu.id === activeSubMenu && (
-                <SubMenus key={menu.id} subMenus={menu.subBoardMenus} />
+              <Tab name={name} url={url} />
+              {subBoardMenus && id === activeSubMenu && (
+                <SubMenus key={id} subMenus={subBoardMenus} />
               )}
             </li>
           );

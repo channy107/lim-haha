@@ -1,5 +1,5 @@
 import styles from './youtubeStream.module.css';
-import Youtube from '@/public/youtube.png';
+import Youtube from '@/assets/svg/youtube.png';
 import Image from 'next/image';
 
 export default function YoutubeStream() {

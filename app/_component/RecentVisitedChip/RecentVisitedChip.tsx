@@ -1,7 +1,7 @@
 'use client';
 import useRecentVisited, { ISetRecentVisitedCookieParam } from '@/app/_hooks/useRecentVisited';
 import { MouseEvent } from 'react';
-import Close from '@/public/close.svg';
+import Close from '@/assets/svg/close.svg';
 import Image from 'next/image';
 import styles from './recentVisitedChip.module.css';
 import Link from 'next/link';

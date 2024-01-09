@@ -1,7 +1,5 @@
-import PageContainer from '@/app/_component/PageContainer/PageContainer';
-
 const Join = () => {
-  return <PageContainer>Join</PageContainer>;
+  return <>Join</>;
 };
 
 export default Join;

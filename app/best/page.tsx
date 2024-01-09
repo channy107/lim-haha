@@ -1,7 +1,5 @@
-import PageContainer from '@/app/_component/PageContainer/PageContainer';
-
 const Best = () => {
-  return <PageContainer>Best</PageContainer>;
+  return <>Best</>;
 };
 
 export default Best;

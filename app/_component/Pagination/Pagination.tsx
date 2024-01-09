@@ -1,7 +1,7 @@
 'use client';
+import { postsPageState } from '@/app/_recoil/post/atoms';
 import styles from './pagination.module.css';
 import { useRecoilState } from 'recoil';
-import { postsPageState } from '@/app/_atoms/posts/page';
 
 export default function Pagination() {
   const [pageState, setPageState] = useRecoilState(postsPageState);
@@ -17,6 +17,7 @@ export default function Pagination() {
   };
 
   const pageItems = [];
+
   for (let i = startIndex; i <= endIndex; i++) {
     pageItems.push(
       <div

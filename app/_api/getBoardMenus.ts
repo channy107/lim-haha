@@ -1,5 +1,7 @@
+import { MENUS_ENDPOINT } from './endpoints';
+
 export async function getBoardMenus() {
-  const res = await fetch('http://localhost:3000/api/boardMenus', {
+  const res = await fetch(MENUS_ENDPOINT, {
     next: {
       tags: ['boardMenus'],
     },

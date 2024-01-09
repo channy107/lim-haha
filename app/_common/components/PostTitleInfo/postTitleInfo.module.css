@@ -1,0 +1,28 @@
+.info {
+  display: flex;
+  align-items: center;
+  padding: 2px 0px;
+  color: #c6c6c6;
+  font-size: 12px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  position: relative;
+  margin: 0px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1px;
+  height: 1px;
+  background-color: #c6c6c6;
+  border-radius: 50%;
+}
+
+.icon {
+  margin-right: 3px;
+}

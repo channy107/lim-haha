@@ -16,14 +16,18 @@ interface IBoardMenu {
   url: string;
 }
 
+type TAuthorType = 'admin' | 'user';
+
 interface IAuthor {
   name: string;
-  type: 'admin' | 'user';
+  type: TAuthorType;
 }
+
+type TNotificationType = 'dudle' | 'notice';
 
 interface INotification {
   id: string;
-  type: 'dudle' | 'notice';
+  type: TNotificationType;
   title: string;
   content: string;
   commentCount: number;
@@ -33,7 +37,7 @@ interface INotification {
   likes: number;
 }
 
-interface IBoards {
+interface IPost {
   id: string;
   thumbnail: string;
   title: string;
