@@ -8,21 +8,30 @@ import styles from './posts.module.css';
 import Badge from '../Badge/Badge';
 import useGetBoards from '@/app/_remotes/useGetBoards';
 import { elapsedTime } from '@/app/_utils/date';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { postsPageState } from '@/app/_atoms/posts/page';
 import { useEffect } from 'react';
+import { postsSearchState } from '@/app/_atoms/posts/search';
 
 export default function Posts() {
   const [pageState, setPageState] = useRecoilState(postsPageState);
-  const { data } = useGetBoards({ page: pageState.page });
+  const searchState = useRecoilValue(postsSearchState);
+  const { data } = useGetBoards({
+    page: pageState.page,
+    search: searchState.search,
+    searchType: searchState.searchType,
+  });
   const { data: boards, total = 0 } = data || {};
 
   useEffect(() => {
     setPageState({ ...pageState, total });
-  }, []);
+  }, [data]);
+
+  const isEmpty = boards.length === 0;
 
   return (
     <>
+      {isEmpty && <>검색결과가 없습니다.</>}
       {boards?.map((board) => (
         <section className={styles.container}>
           <div className={styles.thumbnail}>

@@ -1,5 +1,16 @@
-export async function getBoards(page: number, offset: number) {
-  const res = await fetch(`http://localhost:3000/api/boards?page=${page}&offset=${offset}`, {
+export async function getBoards(
+  page: number,
+  offset: number,
+  search?: string,
+  searchType?: string,
+) {
+  let url = `http://localhost:3000/api/boards?page=${page}&offset=${offset}`;
+
+  if (search && searchType) {
+    url += `&search=${search}&searchType=${searchType}`;
+  }
+
+  const res = await fetch(url, {
     next: {
       tags: ['boards'],
     },

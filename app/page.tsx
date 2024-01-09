@@ -5,6 +5,7 @@ import YoutubeStream from './_component/YoutubeStream';
 import Notification from './_component/BoardNotification';
 import Posts from './_component/BoardPosts';
 import Pagination from './_component/Pagination/Pagination';
+import Search from './_component/Search';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
           <Notification />
           <Posts />
           <Pagination />
+          <Search />
         </Board>
       </section>
     </PageContainer>

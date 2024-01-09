@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <RQProvider>
               <MSWComponent>
                 <Header />
-                <Adsense />
+                {/* <Adsense /> */}
                 {children}
               </MSWComponent>
             </RQProvider>

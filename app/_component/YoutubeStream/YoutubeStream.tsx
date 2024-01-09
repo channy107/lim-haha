@@ -6,10 +6,10 @@ export default function YoutubeStream() {
   return (
     <section className={styles.container}>
       <div className={styles.recent}>
-        <p className={styles.title}>
+        <div className={styles.title}>
           <Image src={Youtube} alt="youtube" width="20" height="20" />
           최신 임투부
-        </p>
+        </div>
         <iframe
           src="https://www.youtube.com/embed?list=UUUj6rrhMTR9pipbAWBAMvUQ"
           width="470"
@@ -19,10 +19,10 @@ export default function YoutubeStream() {
         />
       </div>
       <div className={styles.original}>
-        <p className={styles.title}>
+        <div className={styles.title}>
           <Image src={Youtube} alt="youtube" width="20" height="20" />
           원본 박물관
-        </p>
+        </div>
         <iframe
           src="https://www.youtube.com/embed?list=UUewitUbsXnyjvJjGgxa0IYw"
           width="470"
